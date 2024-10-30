@@ -2,6 +2,7 @@ package com.mobile.goclean.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,7 +29,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -146,28 +150,58 @@ fun RegisterScreen(navController: NavController) {
                     ),
             )
             Spacer(modifier = Modifier.height(20.dp))
-            Button(
-                onClick = {
-                    navController.navigate("login_screen")
-                },
-                colors =
-                    ButtonDefaults.buttonColors(
-                        containerColor = PrimaryColor,
-                        contentColor = OnPrimaryColor,
-                    ),
-                modifier = Modifier.width(200.dp),
-                shape = RoundedCornerShape(8.dp),
+            Box(
+                modifier =
+                    Modifier
+                        .width(200.dp)
+                        .background(BackgroundGradient, RoundedCornerShape(12.dp)),
             ) {
+                Button(
+                    onClick = {
+                        navController.navigate("login_screen")
+                    },
+                    colors =
+                        ButtonDefaults.buttonColors(
+                            containerColor = Color.Transparent,
+                            contentColor = Color.White,
+                        ),
+                    modifier = Modifier.width(200.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) {
+                    Text(
+                        "REGISTER",
+                        fontFamily = ooredo,
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Icon(
+                        contentDescription = "Login",
+                        painter = painterResource(id = R.drawable.login),
+                        tint = OnPrimaryColor,
+                        modifier = Modifier.size(20.dp),
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+            Row {
                 Text(
-                    "REGISTER",
-                    fontFamily = ooredo,
+                    text = "Sudah ada akun? ",
+                    style =
+                        TextStyle(
+                            fontFamily = productsans,
+                        ),
                 )
-                Spacer(modifier = Modifier.width(8.dp))
-                Icon(
-                    contentDescription = "Login",
-                    painter = painterResource(id = R.drawable.login),
-                    tint = OnPrimaryColor,
-                    modifier = Modifier.size(20.dp),
+                ClickableText(
+                    text = AnnotatedString("Login"),
+                    onClick = {
+                        navController.navigate("login_screen")
+                    },
+                    style =
+                        TextStyle(
+                            color = PrimaryColor,
+                            fontFamily = productsans,
+                            fontWeight = FontWeight.Bold,
+                        ),
                 )
             }
         }

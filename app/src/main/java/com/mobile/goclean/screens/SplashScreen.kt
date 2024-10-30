@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.mobile.goclean.R
 import com.mobile.goclean.theme.BackgroundGradient
@@ -23,9 +24,9 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
-    val SplashDuration = 1000L
+    val splashDuration = 1000L
     LaunchedEffect(key1 = true) {
-        delay(SplashDuration)
+        delay(splashDuration)
         navController.navigate("login_screen") {
             popUpTo("splash_screen") {
                 inclusive = true
@@ -50,6 +51,7 @@ fun SplashScreen(navController: NavController) {
                 TextStyle(
                     fontFamily = ooredo,
                     color = OnPrimaryColor,
+                    fontSize = 30.sp,
                 ),
         )
     }
