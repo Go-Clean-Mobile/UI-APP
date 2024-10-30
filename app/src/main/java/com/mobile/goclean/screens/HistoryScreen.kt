@@ -43,8 +43,7 @@ fun HistoryScreen(navController: NavController) {
                         .fillMaxSize()
                         .background(BackgroundGradient)
                         .padding(paddingValues)
-                        .padding(horizontal = 20.dp)
-                        .verticalScroll(rememberScrollState()),
+                        .padding(horizontal = 20.dp),
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -53,74 +52,78 @@ fun HistoryScreen(navController: NavController) {
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier.padding(vertical = 20.dp),
                 )
-                HistoryItems(
-                    tanggal = "17/08/2024",
-                    jumlahSampah = 88,
-                    type = 1,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                Column(
+                    Modifier.verticalScroll(rememberScrollState()),
+                ) {
+                    HistoryItems(
+                        tanggal = "17/08/2024",
+                        jumlahSampah = 88,
+                        type = 1,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "18/08/2024",
-                    jumlahSampah = 42,
-                    type = 2,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "18/08/2024",
+                        jumlahSampah = 42,
+                        type = 2,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "19/08/2024",
-                    jumlahSampah = 76,
-                    type = 1,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "19/08/2024",
+                        jumlahSampah = 76,
+                        type = 1,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "20/08/2024",
-                    jumlahSampah = 65,
-                    type = 2,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "20/08/2024",
+                        jumlahSampah = 65,
+                        type = 2,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "20/08/2024",
-                    jumlahSampah = 25,
-                    type = 2,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "20/08/2024",
+                        jumlahSampah = 25,
+                        type = 2,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "20/08/2024",
-                    jumlahSampah = 55,
-                    type = 2,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "20/08/2024",
+                        jumlahSampah = 55,
+                        type = 2,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "21/08/2024",
-                    jumlahSampah = 63,
-                    type = 1,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "21/08/2024",
+                        jumlahSampah = 63,
+                        type = 1,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "21/08/2024",
-                    jumlahSampah = 63,
-                    type = 1,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "21/08/2024",
+                        jumlahSampah = 63,
+                        type = 1,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "21/08/2024",
-                    jumlahSampah = 63,
-                    type = 1,
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+                    HistoryItems(
+                        tanggal = "21/08/2024",
+                        jumlahSampah = 63,
+                        type = 1,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                HistoryItems(
-                    tanggal = "21/08/2024",
-                    jumlahSampah = 63,
-                    type = 1,
-                )
+                    HistoryItems(
+                        tanggal = "21/08/2024",
+                        jumlahSampah = 63,
+                        type = 1,
+                    )
+                }
             }
         },
         bottomBar = {
