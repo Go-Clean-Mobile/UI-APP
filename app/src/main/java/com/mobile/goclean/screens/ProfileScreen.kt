@@ -27,7 +27,7 @@ import com.mobile.goclean.theme.Green600
 fun ProfileScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
-    println("Current route: $currentScreen")
+    println("Route saat ini: $currentScreen")
     Scaffold(
         topBar = { topBar(navController = navController) },
         content = { paddingValues ->
