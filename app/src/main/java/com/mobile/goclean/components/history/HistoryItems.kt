@@ -19,8 +19,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mobile.goclean.R
+import com.mobile.goclean.theme.Blue100
+import com.mobile.goclean.theme.Blue400
 import com.mobile.goclean.theme.Green100
-import com.mobile.goclean.theme.Green700
+import com.mobile.goclean.theme.Green400
 import com.mobile.goclean.theme.Yellow100
 import com.mobile.goclean.theme.Yellow400
 import com.mobile.goclean.theme.ooredo
@@ -29,14 +31,14 @@ import com.mobile.goclean.theme.ooredo
 fun HistoryItems(
     tanggal: String,
     jumlahSampah: Int,
-    type: Int, // 1 untuk organik, 2 untuk anorganik
+    type: Int,
     modifier: Modifier = Modifier,
 ) {
-    val (iconResId, iconTint) =
+    val (iconResId, iconTint, backgroundColor) =
         when (type) {
-            1 -> Pair(R.drawable.leaf, Green700) // Ganti icon organik sesuai kebutuhan
-            2 -> Pair(R.drawable.recycle, Color.Blue) // Ganti icon anorganik sesuai kebutuhan
-            else -> Pair(R.drawable.leaf, Color.Gray)
+            1 -> Triple(R.drawable.leaf, Green400, Green100)
+            2 -> Triple(R.drawable.recycle, Blue400, Blue100)
+            else -> Triple(R.drawable.leaf, Color.Gray, Color.LightGray)
         }
 
     Row(
@@ -50,7 +52,7 @@ fun HistoryItems(
         Box(
             modifier =
                 Modifier
-                    .background(Green100, RoundedCornerShape(50.dp))
+                    .background(backgroundColor, RoundedCornerShape(50.dp)) // Background berdasarkan type
                     .padding(10.dp),
         ) {
             Icon(

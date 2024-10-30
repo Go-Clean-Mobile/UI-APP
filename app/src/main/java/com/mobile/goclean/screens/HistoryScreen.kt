@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -40,7 +42,8 @@ fun HistoryScreen(navController: NavController) {
                         .fillMaxSize()
                         .background(BackgroundGradient)
                         .padding(paddingValues)
-                        .padding(horizontal = 20.dp),
+                        .padding(horizontal = 20.dp)
+                        .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -88,6 +91,27 @@ fun HistoryScreen(navController: NavController) {
                     tanggal = "20/08/2024",
                     jumlahSampah = 55,
                     type = 2,
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+
+                HistoryItems(
+                    tanggal = "21/08/2024",
+                    jumlahSampah = 63,
+                    type = 1,
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+
+                HistoryItems(
+                    tanggal = "21/08/2024",
+                    jumlahSampah = 63,
+                    type = 1,
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+
+                HistoryItems(
+                    tanggal = "21/08/2024",
+                    jumlahSampah = 63,
+                    type = 1,
                 )
                 Spacer(modifier = Modifier.height(10.dp))
 
