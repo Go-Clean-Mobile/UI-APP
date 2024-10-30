@@ -18,7 +18,6 @@ import com.mobile.goclean.screens.SplashScreen
 fun Nav() {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
 
     // Define the navigation host
     NavHost(navController = navController, startDestination = "splash_screen") {
