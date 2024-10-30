@@ -25,15 +25,17 @@ import com.mobile.goclean.theme.Green600
 fun HomeScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
+    println("Route saat ini : $currentScreen")
     Scaffold(
         topBar = { topBar(navController = navController) },
         content = { paddingValues ->
-            Column (
-                Modifier.fillMaxSize()
+            Column(
+                Modifier
+                    .fillMaxSize()
                     .background(BackgroundGradient)
                     .fillMaxSize()
                     .padding(paddingValues),
-            ){
+            ) {
                 welcomeSection()
                 reportSection()
             }

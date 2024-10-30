@@ -169,8 +169,9 @@ fun RegisterScreen(navController: NavController) {
                     shape = RoundedCornerShape(8.dp),
                 ) {
                     Text(
-                        "REGISTER",
+                        "Register",
                         fontFamily = ooredo,
+                        fontSize = 20.sp,
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Icon(

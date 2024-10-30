@@ -2,10 +2,22 @@ package com.mobile.goclean.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.mobile.goclean.R
 
-// Set of Material typography styles to start with
+val productsans =
+    FontFamily(
+        Font(R.font.productsans, FontWeight.Normal),
+    )
+
+val ooredo =
+    FontFamily(
+        Font(R.font.ooredo, FontWeight.Normal),
+    )
+
 val Typography =
     Typography(
         bodyLarge =
@@ -18,13 +30,4 @@ val Typography =
                 fontWeight = FontWeight.Normal,
                 fontSize = 40.sp,
             ),
-/* Other default text styles to override
-labelSmall = TextStyle(
-fontFamily = FontFamily.Default,
-fontWeight = FontWeight.Medium,
-fontSize = 11.sp,
-lineHeight = 16.sp,
-letterSpacing = 0.5.sp
-)
-*/
     )

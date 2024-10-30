@@ -13,8 +13,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.mobile.goclean.R
 import com.mobile.goclean.theme.BackgroundGradient
 import com.mobile.goclean.theme.OnPrimaryColor
@@ -33,7 +35,10 @@ fun SplashScreen(navController: NavController) {
     }
 
     Column(
-        modifier = Modifier.fillMaxSize().background(BackgroundGradient),
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .background(BackgroundGradient),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -49,4 +54,11 @@ fun SplashScreen(navController: NavController) {
             color = OnPrimaryColor,
         )
     }
+}
+
+@Preview
+@Composable
+private fun prev() {
+    val navController = rememberNavController()
+    SplashScreen(navController = navController)
 }

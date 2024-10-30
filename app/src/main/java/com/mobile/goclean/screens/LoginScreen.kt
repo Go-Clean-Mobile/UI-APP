@@ -2,6 +2,7 @@ package com.mobile.goclean.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -31,6 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -86,7 +88,7 @@ fun LoginScreen(navController: NavController) {
                     Spacer(modifier = Modifier.width(8.dp))
                     Icon(
                         painter = painterResource(id = R.drawable.leaf),
-                        contentDescription = "Login",
+                        contentDescription = "Leaf",
                         tint = OnPrimaryColor,
                         modifier = Modifier.size(30.dp),
                     )
@@ -101,7 +103,7 @@ fun LoginScreen(navController: NavController) {
                 colors =
                     TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = Color.Gray,
-                        unfocusedBorderColor = Color.Red,
+                        unfocusedBorderColor = Color.Gray,
                     ),
                 shape = RoundedCornerShape(8.dp),
                 textStyle =
@@ -117,6 +119,7 @@ fun LoginScreen(navController: NavController) {
                 onValueChange = { password = it },
                 label = { Text("Password") },
                 placeholder = { Text("Masukkan Password Anda..") },
+                visualTransformation = PasswordVisualTransformation(),
                 colors =
                     TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = Color.Gray,
@@ -130,38 +133,46 @@ fun LoginScreen(navController: NavController) {
                     ),
             )
             Spacer(modifier = Modifier.height(20.dp))
-            Button(
-                onClick = {
-                    navController.navigate("home_screen")
-                },
-                colors =
-                    ButtonDefaults.buttonColors(
-                        containerColor = PrimaryColor,
-                        contentColor = OnPrimaryColor,
-                    ),
-                modifier = Modifier.width(200.dp),
-                shape = RoundedCornerShape(8.dp),
+            Box(
+                modifier =
+                    Modifier
+                        .width(200.dp)
+                        .background(BackgroundGradient, RoundedCornerShape(12.dp)),
             ) {
-                Text(
-                    "LOGIN",
-                    fontFamily = ooredo,
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Icon(
-                    contentDescription = "Login",
-                    painter = painterResource(id = R.drawable.login),
-                    tint = OnPrimaryColor,
-                    modifier = Modifier.size(20.dp),
-                )
+                Button(
+                    onClick = {
+                        navController.navigate("home_screen")
+                    },
+                    colors =
+                        ButtonDefaults.buttonColors(
+                            containerColor = Color.Transparent,
+                            contentColor = Color.White,
+                        ),
+                    modifier = Modifier.width(200.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) {
+                    Text(
+                        "Login",
+                        fontFamily = ooredo,
+                        fontSize = 20.sp,
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Icon(
+                        contentDescription = "Login",
+                        painter = painterResource(id = R.drawable.login),
+                        tint = OnPrimaryColor,
+                        modifier = Modifier.size(20.dp),
+                    )
+                }
             }
             Spacer(modifier = Modifier.height(12.dp))
             Row {
                 Text(
                     text = "Belum punya akun? ",
                     style =
-                    TextStyle(
-                        fontFamily = productsans,
-                    ),
+                        TextStyle(
+                            fontFamily = productsans,
+                        ),
                 )
                 ClickableText(
                     text = AnnotatedString("Daftar"),
@@ -169,11 +180,11 @@ fun LoginScreen(navController: NavController) {
                         navController.navigate("register_screen")
                     },
                     style =
-                    TextStyle(
-                        color = PrimaryColor,
-                        fontFamily = productsans,
-                        fontWeight = FontWeight.Bold
-                    ),
+                        TextStyle(
+                            color = PrimaryColor,
+                            fontFamily = productsans,
+                            fontWeight = FontWeight.Bold,
+                        ),
                 )
             }
         }

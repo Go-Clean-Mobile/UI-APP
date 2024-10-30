@@ -1,6 +1,5 @@
 package com.mobile.goclean.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,12 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.mobile.goclean.R
 import com.mobile.goclean.components.bottomBar
 import com.mobile.goclean.components.topBar
 import com.mobile.goclean.theme.BackgroundGradient
@@ -30,6 +27,7 @@ import com.mobile.goclean.theme.Green600
 fun ProfileScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
+    println("Current route: $currentScreen")
     Scaffold(
         topBar = { topBar(navController = navController) },
         content = { paddingValues ->
@@ -41,11 +39,6 @@ fun ProfileScreen(navController: NavController) {
                 Text(
                     "[Profile]",
                     style = MaterialTheme.typography.titleLarge,
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.kucing),
-                    contentDescription = "Profile Image",
-                    modifier = Modifier.fillMaxSize(),
                 )
             }
         },
