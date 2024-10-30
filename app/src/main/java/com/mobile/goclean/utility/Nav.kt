@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.mobile.goclean.screens.AddScreen
 import com.mobile.goclean.screens.HistoryScreen
@@ -17,9 +16,7 @@ import com.mobile.goclean.screens.SplashScreen
 @Composable
 fun Nav() {
     val navController = rememberNavController()
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
 
-    // Define the navigation host
     NavHost(navController = navController, startDestination = "splash_screen") {
         composable("splash_screen") {
             SplashScreen(navController = navController)
