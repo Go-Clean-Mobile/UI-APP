@@ -52,6 +52,9 @@ android {
             java {
                 srcDirs("src/main/java", "src/main/java/2", "src/main/java/components")
             }
+            res {
+                srcDirs("src/main/res", "src/main/res/svgs")
+            }
         }
     }
 }

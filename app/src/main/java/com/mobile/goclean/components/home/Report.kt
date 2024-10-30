@@ -23,7 +23,7 @@ import com.mobile.goclean.theme.TitleTextColor
 import com.mobile.goclean.theme.Yellow400
 
 @Composable
-fun reportSummary(modifier: Modifier = Modifier) {
+fun reportSection(modifier: Modifier = Modifier) {
     Column(
         modifier =
             Modifier

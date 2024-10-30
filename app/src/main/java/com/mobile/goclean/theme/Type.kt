@@ -16,7 +16,7 @@ val Typography =
             TextStyle(
                 fontFamily = ooredo,
                 fontWeight = FontWeight.Normal,
-                fontSize = 50.sp,
+                fontSize = 40.sp,
             ),
 /* Other default text styles to override
 labelSmall = TextStyle(

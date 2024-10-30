@@ -19,14 +19,7 @@ import com.mobile.goclean.theme.SubBackgroundColor
 import com.mobile.goclean.theme.ooredo
 
 @Composable
-fun content(modifier: Modifier = Modifier) {
-    Column(
-        modifier =
-            modifier
-                .fillMaxSize()
-                .background(BackgroundGradient)
-                .fillMaxSize(),
-    ) {
+fun welcomeSection(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier.padding(16.dp),
         ) {
@@ -38,8 +31,7 @@ fun content(modifier: Modifier = Modifier) {
                 val (text) = createRefs()
                 Text(
                     text = "Welcome,  Regi!",
-                    fontSize = 30.sp,
-                    fontFamily = ooredo,
+                    style = MaterialTheme.typography.titleLarge,
                     modifier =
                         Modifier.constrainAs(text) {
                             start.linkTo(parent.start)
@@ -84,7 +76,5 @@ fun content(modifier: Modifier = Modifier) {
                             },
                 )
             }
-            reportSummary()
-        }
     }
 }
