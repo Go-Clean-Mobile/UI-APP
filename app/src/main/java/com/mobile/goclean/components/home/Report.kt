@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mobile.goclean.R
@@ -26,9 +27,9 @@ import com.mobile.goclean.theme.Yellow400
 fun reportSection(modifier: Modifier = Modifier) {
     Column(
         modifier =
-            Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -82,9 +83,9 @@ fun InfoBox(
 ) {
     Box(
         modifier =
-            modifier
-                .background(Color.White, RoundedCornerShape(16.dp))
-                .padding(10.dp),
+        modifier
+            .background(Color.White, RoundedCornerShape(16.dp))
+            .padding(10.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -92,9 +93,9 @@ fun InfoBox(
         ) {
             Box(
                 modifier =
-                    Modifier
-                        .background(SubBackgroundColor.copy(alpha = 0.1f), RoundedCornerShape(10.dp))
-                        .width(40.dp),
+                Modifier
+                    .background(SubBackgroundColor.copy(alpha = 0.1f), RoundedCornerShape(10.dp))
+                    .width(40.dp),
             ) {
                 Icon(
                     painter = painterResource(id = iconResId),
@@ -113,7 +114,9 @@ fun InfoBox(
                 )
                 Spacer(Modifier.size(4.dp))
                 Row(
-                    modifier = Modifier.background(bg, RoundedCornerShape(4.dp)).padding(4.dp, 1.dp),
+                    modifier = Modifier
+                        .background(bg, RoundedCornerShape(4.dp))
+                        .padding(4.dp, 1.dp),
                 ) {
                     Text(
                         text = value,
@@ -125,4 +128,10 @@ fun InfoBox(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun Prev() {
+    reportSection()
 }

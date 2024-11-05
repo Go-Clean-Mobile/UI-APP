@@ -23,7 +23,7 @@ import com.mobile.goclean.theme.OnPrimaryColor
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController: NavController) {
+fun splashScreen(navController: NavController) {
     var splashDuration = 1000L
     LaunchedEffect(key1 = true) {
         delay(splashDuration)
@@ -60,5 +60,5 @@ fun SplashScreen(navController: NavController) {
 @Composable
 private fun prev() {
     val navController = rememberNavController()
-    SplashScreen(navController = navController)
+    splashScreen(navController = navController)
 }

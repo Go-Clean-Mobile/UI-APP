@@ -22,7 +22,7 @@ import com.mobile.goclean.theme.BackgroundGradient
 import com.mobile.goclean.theme.Green600
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun homeScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
     println("Route saat ini : $currentScreen")
@@ -57,5 +57,5 @@ fun HomeScreen(navController: NavController) {
 @Composable
 private fun prev() {
     val navController = rememberNavController()
-    HomeScreen(navController = navController)
+    homeScreen(navController = navController)
 }

@@ -26,7 +26,7 @@ import com.mobile.goclean.theme.Green600
 import com.mobile.goclean.theme.ooredo
 
 @Composable
-fun AddScreen(navController: NavController) {
+fun addScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "add_screen"
     println("Route saat ini : $currentScreen")
@@ -65,5 +65,5 @@ fun AddScreen(navController: NavController) {
 @Composable
 private fun prev() {
     val navController = rememberNavController()
-    AddScreen(navController = navController)
+    addScreen(navController = navController)
 }

@@ -46,7 +46,7 @@ import com.mobile.goclean.theme.productsans
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen(navController: NavController) {
+fun registerScreen(navController: NavController) {
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -213,5 +213,5 @@ fun RegisterScreen(navController: NavController) {
 @Composable
 private fun prev() {
     val navController = rememberNavController()
-    LoginScreen(navController = navController)
+    registerScreen(navController = navController)
 }
