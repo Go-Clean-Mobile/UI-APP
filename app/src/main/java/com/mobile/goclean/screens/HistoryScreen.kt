@@ -24,7 +24,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.mobile.goclean.components.bottomBar
-import com.mobile.goclean.components.history.HistoryItems
+import com.mobile.goclean.components.history.historyItems
 import com.mobile.goclean.components.topBar
 import com.mobile.goclean.theme.BackgroundGradient
 import com.mobile.goclean.theme.Green600
@@ -55,72 +55,72 @@ fun historyScreen(navController: NavController) {
                 Column(
                     Modifier.verticalScroll(rememberScrollState()),
                 ) {
-                    HistoryItems(
+                    historyItems(
                         tanggal = "17/08/2024",
-                        jumlahSampah = 88,
+                        jumlahKoin = 88,
                         type = 1,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "18/08/2024",
-                        jumlahSampah = 42,
+                        jumlahKoin = 42,
                         type = 2,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "19/08/2024",
-                        jumlahSampah = 76,
+                        jumlahKoin = 76,
                         type = 1,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "20/08/2024",
-                        jumlahSampah = 65,
+                        jumlahKoin = 65,
                         type = 2,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "20/08/2024",
-                        jumlahSampah = 25,
+                        jumlahKoin = 25,
                         type = 2,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "20/08/2024",
-                        jumlahSampah = 55,
+                        jumlahKoin = 55,
                         type = 2,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "21/08/2024",
-                        jumlahSampah = 63,
+                        jumlahKoin = 63,
                         type = 1,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "21/08/2024",
-                        jumlahSampah = 63,
+                        jumlahKoin = 63,
                         type = 1,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "21/08/2024",
-                        jumlahSampah = 63,
+                        jumlahKoin = 63,
                         type = 1,
                     )
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    HistoryItems(
+                    historyItems(
                         tanggal = "21/08/2024",
-                        jumlahSampah = 63,
+                        jumlahKoin = 63,
                         type = 1,
                     )
                 }

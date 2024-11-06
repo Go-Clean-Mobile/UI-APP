@@ -28,9 +28,9 @@ import com.mobile.goclean.theme.Yellow400
 import com.mobile.goclean.theme.ooredo
 
 @Composable
-fun HistoryItems(
+fun historyItems(
     tanggal: String,
-    jumlahSampah: Int,
+    jumlahKoin: Int,
     type: Int,
     modifier: Modifier = Modifier,
 ) {
@@ -81,7 +81,7 @@ fun HistoryItems(
                         .padding(8.dp, 2.dp),
             ) {
                 Text(
-                    text = "+ $jumlahSampah Point",
+                    text = "+ $jumlahKoin Point",
                     style =
                         TextStyle(
                             fontFamily = ooredo,

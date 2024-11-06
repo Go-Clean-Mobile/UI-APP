@@ -27,22 +27,22 @@ import com.mobile.goclean.theme.Yellow400
 fun reportSection(modifier: Modifier = Modifier) {
     Column(
         modifier =
-        Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
+            Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            InfoBox(
+            infoBox(
                 title = "Total",
                 value = "120",
                 iconResId = R.drawable.trash,
                 modifier = Modifier.weight(1f),
                 bg = Red400,
             )
-            InfoBox(
+            infoBox(
                 title = "Organik",
                 value = "80",
                 iconResId = R.drawable.leaf,
@@ -55,14 +55,14 @@ fun reportSection(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            InfoBox(
+            infoBox(
                 title = "Anorganik",
                 value = "40",
                 iconResId = R.drawable.recycle,
                 modifier = Modifier.weight(1f),
                 bg = Blue400,
             )
-            InfoBox(
+            infoBox(
                 title = "Point",
                 value = "788",
                 iconResId = R.drawable.copper_coin,
@@ -74,7 +74,7 @@ fun reportSection(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun InfoBox(
+fun infoBox(
     title: String,
     value: String,
     iconResId: Int,
@@ -83,9 +83,9 @@ fun InfoBox(
 ) {
     Box(
         modifier =
-        modifier
-            .background(Color.White, RoundedCornerShape(16.dp))
-            .padding(10.dp),
+            modifier
+                .background(Color.White, RoundedCornerShape(16.dp))
+                .padding(10.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -93,9 +93,9 @@ fun InfoBox(
         ) {
             Box(
                 modifier =
-                Modifier
-                    .background(SubBackgroundColor.copy(alpha = 0.1f), RoundedCornerShape(10.dp))
-                    .width(40.dp),
+                    Modifier
+                        .background(SubBackgroundColor.copy(alpha = 0.1f), RoundedCornerShape(10.dp))
+                        .width(40.dp),
             ) {
                 Icon(
                     painter = painterResource(id = iconResId),
@@ -114,9 +114,10 @@ fun InfoBox(
                 )
                 Spacer(Modifier.size(4.dp))
                 Row(
-                    modifier = Modifier
-                        .background(bg, RoundedCornerShape(4.dp))
-                        .padding(4.dp, 1.dp),
+                    modifier =
+                        Modifier
+                            .background(bg, RoundedCornerShape(4.dp))
+                            .padding(4.dp, 1.dp),
                 ) {
                     Text(
                         text = value,

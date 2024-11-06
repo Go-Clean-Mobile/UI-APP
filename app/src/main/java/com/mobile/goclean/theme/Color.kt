@@ -132,7 +132,7 @@ val BackgroundGradient =
     Brush.linearGradient(
         colors =
             listOf(
-                Color(0xFF00C853),
+                PrimaryColor,
                 Green600,
             ),
         start = Offset(0f, 0f),
