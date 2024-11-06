@@ -32,7 +32,7 @@ import com.mobile.goclean.theme.Green600
 @Composable
 fun historyScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentScreen = navBackStackEntry?.destination?.route ?: "login_screen"
+    val currentScreen = navBackStackEntry?.destination?.route ?: "history_screen"
     println("Route saat ini : $currentScreen")
     Scaffold(
         topBar = { topBar(navController = navController) },
