@@ -1,4 +1,4 @@
-package com.mobile.goclean.screens
+package com.mobile.goclean.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
