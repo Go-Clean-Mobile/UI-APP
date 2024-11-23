@@ -26,6 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.mobile.goclean.R
 import com.mobile.goclean.theme.BackgroundColor
 import com.mobile.goclean.theme.OnPrimaryColor
+import com.mobile.goclean.theme.PrimaryColor
 import com.mobile.goclean.theme.SubBackgroundColor
 
 @OptIn(ExperimentalMaterial3Api::class)

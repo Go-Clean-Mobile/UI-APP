@@ -4,9 +4,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -16,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mobile.goclean.R
@@ -28,9 +32,9 @@ import com.mobile.goclean.theme.Yellow400
 import com.mobile.goclean.theme.ooredo
 
 @Composable
-fun historyItems(
-    tanggal: String,
-    jumlahKoin: Int,
+fun historyItem(
+    date: String,
+    points: Int,
     type: Int,
     modifier: Modifier = Modifier,
 ) {
@@ -38,55 +42,58 @@ fun historyItems(
         when (type) {
             1 -> Triple(R.drawable.leaf, Green400, Green100)
             2 -> Triple(R.drawable.recycle, Blue400, Blue100)
-            else -> Triple(R.drawable.leaf, Color.Gray, Color.LightGray)
+            else -> Triple(R.drawable.trash, Color.Gray, Color.LightGray)
         }
 
     Row(
         modifier =
             modifier
+                .fillMaxWidth()
                 .background(Color.White, RoundedCornerShape(12.dp))
-                .padding(15.dp)
-                .fillMaxWidth(),
+                .padding(15.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
             modifier =
                 Modifier
-                    .background(backgroundColor, RoundedCornerShape(50.dp)) // Background berdasarkan type
+                    .background(backgroundColor, RoundedCornerShape(50.dp))
                     .padding(10.dp),
         ) {
             Icon(
                 painter = painterResource(id = iconResId),
-                contentDescription = "Icon Sampah",
+                contentDescription = null,
                 tint = iconTint,
                 modifier = Modifier.size(30.dp),
             )
         }
 
-        Column(modifier = Modifier.padding(start = 10.dp)) {
+        Spacer(modifier = Modifier.width(10.dp))
+
+        Column {
             Text(
-                tanggal,
+                text = date,
                 style =
                     TextStyle(
                         fontFamily = ooredo,
                         color = Color.Gray,
-                        fontSize = 18.sp,
+                        fontSize = 16.sp,
                     ),
             )
+            Spacer(modifier = Modifier.height(4.dp))
             Box(
                 modifier =
                     Modifier
-                        .padding(top = 4.dp)
                         .background(Yellow100, RoundedCornerShape(20.dp))
-                        .padding(8.dp, 2.dp),
+                        .padding(horizontal = 8.dp, vertical = 2.dp),
             ) {
                 Text(
-                    text = "+ $jumlahKoin Point",
+                    text = "+ $points Point",
                     style =
                         TextStyle(
                             fontFamily = ooredo,
                             color = Yellow400,
-                            fontSize = 18.sp,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold,
                         ),
                 )
             }

@@ -127,7 +127,7 @@ val Emerald900 = Color(0xFF064E3B)
 
 // Custom Template
 val PrimaryColor = Color(0xFF00C853)
-val BackgroundColor = Color(0xFF00C853)
+val BackgroundColor = Color(0x03c355)
 val BackgroundGradient =
     Brush.linearGradient(
         colors =

@@ -20,9 +20,13 @@ import com.mobile.goclean.components.home.welcomeSection
 import com.mobile.goclean.components.topBar
 import com.mobile.goclean.theme.BackgroundGradient
 import com.mobile.goclean.theme.Green600
+import com.mobile.goclean.viewmodel.UserViewModel
 
 @Composable
-fun homeScreen(navController: NavController) {
+fun homeScreen(
+    navController: NavController,
+    userViewModel: UserViewModel = UserViewModel(),
+) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = navBackStackEntry?.destination?.route ?: "home_screen"
     println("Route saat ini : $currentScreen")
@@ -36,7 +40,7 @@ fun homeScreen(navController: NavController) {
                     .fillMaxSize()
                     .padding(paddingValues),
             ) {
-                welcomeSection()
+                welcomeSection(userViewModel = userViewModel)
                 reportSection()
             }
         },
